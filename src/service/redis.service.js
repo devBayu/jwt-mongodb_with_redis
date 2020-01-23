@@ -1,7 +1,6 @@
 import { createClient } from 'redis';
 
 const {REDIS_HOST, REDIS_PORT, REDIS_DB} = process.env;
-
 export default class RedisService {
     constructor() {
         this.client = createClient({

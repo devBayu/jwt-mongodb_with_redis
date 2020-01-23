@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 import AuthenticationService from "../service/authentication.service";
 
-
 const authenticationService = new AuthenticationService();
 const authentication = async (req, res, next) => {
     try {
@@ -9,8 +8,6 @@ const authentication = async (req, res, next) => {
         const data = jwt.verify(token, process.env.JWT_SECRET);
         const valid = await authenticationService.validateSession(data.sessionId);
 
-        console.log(data.sessionId, '//data session id');
-        console.log(valid, '//valid in middleware');
         if (valid) {
             next();
         } else {
