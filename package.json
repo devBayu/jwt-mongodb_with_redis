@@ -1,0 +1,51 @@
+{
+  "name": "be-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "jest": "^25.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.2.1",
+    "moment": "^2.24.0",
+    "mongodb": "^3.5.2",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "redis": "^2.8.0",
+    "supertest": "^4.0.2",
+    "swagger-node-express": "^2.1.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/runtime": "^7.7.4",
+    "babel-jest": "^24.9.0",
+    "mongoose": "^5.8.9",
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "start": "node index",
+    "start:dev": "nodemon --exec babel-node index.js",
+    "pretest": "cross-env NODE_ENV=test",
+    "test": "jest --testTimeout=10000",
+    "test:coverage": "jest --testTimeout --coverage",
+    "swagger:api": "Swagger project edit"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "author": "Bayu R.A",
+  "license": "ISC"
+}
