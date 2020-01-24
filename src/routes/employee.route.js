@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import {EmployeeService} from "../service";
 import authentication from "../middleware/authentication.middleware";
-import {DELETE_FAILED, ID_NOT_FOUND, UPDATE_FAILED, USERNAME_NOT_FOUND} from "../constants/message.constant";
+import {DELETE_FAILED, ID_NOT_FOUND, UPDATE_FAILED} from "../constants/message.constant";
 
 const employeeService = new EmployeeService();
 const employeeRouter = Router()

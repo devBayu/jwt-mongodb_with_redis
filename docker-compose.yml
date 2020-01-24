@@ -1,0 +1,26 @@
+# Use root/example as user/password credentials
+version: '3'
+services:
+  mongo:
+    image: mongo
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+  redis:
+    image: redis
+    restart: unless-stopped
+    volumes:
+      - ./any-conf/redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - 6379:6379
+  api:
+    image: be-challengeapi:latest
+    restart: unless-stopped
+    depends_on:
+      - mongo
+      - redis
+    links:
+      - mongo
+      - redis
+    ports:
+      - 3005:80

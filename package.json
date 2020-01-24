@@ -28,6 +28,7 @@
     "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.7.4",
     "@babel/runtime": "^7.7.4",
+    "babel-cli": "^6.26.0",
     "babel-jest": "^24.9.0",
     "mongoose": "^5.8.9",
     "nodemon": "^2.0.2"
@@ -35,6 +36,8 @@
   "scripts": {
     "start": "node index",
     "start:dev": "nodemon --exec babel-node index.js",
+    "precompile": "rm -rf dist",
+    "compile": "npx babel src --out-dir dist",
     "pretest": "cross-env NODE_ENV=test",
     "test": "jest --testTimeout=10000",
     "test:coverage": "jest --testTimeout --coverage",
