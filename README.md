@@ -3,7 +3,7 @@ To run the application you must perform the steps below:
 1. clone this project first
      git clone https://git.enigmacamp.com/btpn-jenius/bayu-raman-adinata/jenius_bayur.a.git.
 
-2. install all depedencies in the required projects
+2. install all depedencies in the required projects:
      npm install
 
 3. Run the application:
