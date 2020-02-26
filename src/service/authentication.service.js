@@ -15,7 +15,7 @@ class AuthenticationService {
             throw new Error(`${username} ${password} is not found`);
         }
 
-        const sessionId = md5(Date.now());
+        const sessionId = md5(user.username);
         const expiresIn = +process.env.JWT_EXPIRED;
         const token = jwt.sign({sessionId}, process.env.JWT_SECRET, {expiresIn});
         await redisService.set({key: sessionId, value: user._id.toString(), expires: expiresIn});

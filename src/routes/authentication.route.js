@@ -4,7 +4,7 @@ import authentication from "../middleware/authentication.middleware";
 
 let authenticationService = new AuthenticationService();
 const authenticationRouter = Router()
-    .post("/login", async (req, res) => {
+    .post("/login", async (req, res,) => {
         try {
             const {username, password} = req.body;
             const result = await authenticationService.login(username, password);
